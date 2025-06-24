@@ -2,6 +2,9 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
+    "module": "NodeNext",
+    "baseUrl": "./src",
+    "moduleResolution": "nodenext",
     "paths": {
       "@/*": [
         "./*"
@@ -9,9 +12,11 @@
     }
   },
   "include": [
+    "src/**/*",
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
   ]
 }
