@@ -5,10 +5,10 @@ import { Text, View } from "react-native"
 import { Container } from "@/components/onboarding/container"
 import { ThemedButton } from "@/components/shared/button"
 
-export default function Name() {
+export default function Goals() {
   return (
     <Container>
-      <Text>name</Text>
+      <Text>goals</Text>
       <View className="absolute bottom-0 w-full">
         <ThemedButton>
           <ThemedButton.Text>CONTINUE</ThemedButton.Text>
