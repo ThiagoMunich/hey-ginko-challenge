@@ -1,6 +1,7 @@
+import { ThemedButton } from "@/components/shared/button"
 import { Header } from "@/components/welcome/header"
 import { router } from "expo-router"
-import { Button, SafeAreaView } from "react-native"
+import { View } from "react-native"
 
 export default function Index() {
   const navigateToOnboarding = () => {
@@ -8,10 +9,11 @@ export default function Index() {
   }
 
   return (
-    <SafeAreaView className="flex-1 px-10 bg-blue-400">
+    <View className="flex-1 bg-blue-400 pt-20 pb-14 px-14">
       <Header />
-
-      <Button title="NEXT" onPress={navigateToOnboarding} />
-    </SafeAreaView>
+      <ThemedButton className="absolute bottom-0" onPress={navigateToOnboarding}>
+        <ThemedButton.Text>GET STARTED</ThemedButton.Text>
+      </ThemedButton>
+    </View>
   )
 }

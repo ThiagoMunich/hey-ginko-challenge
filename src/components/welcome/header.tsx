@@ -3,7 +3,7 @@ import Animated, { ZoomIn } from "react-native-reanimated"
 
 export function Header() {
   return (
-    <View className="px-10 pt-5">
+    <View className="flex-1">
       <Animated.Image entering={ZoomIn.springify()} source={require("@/assets/images/ginko-logo.png")} />
 
       <Animated.Text className="font-black text-xl mt-5">SCREEN FREEDOM STARTS HERE</Animated.Text>
