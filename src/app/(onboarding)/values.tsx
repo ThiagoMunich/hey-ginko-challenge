@@ -11,7 +11,7 @@ export default function Values() {
       <Text>values</Text>
       <View className="absolute bottom-0 w-full">
         <ThemedButton>
-          <ThemedButton.Text>CONTINUE</ThemedButton.Text>
+          <ThemedButton.Text>FINISH & SIGN UP</ThemedButton.Text>
         </ThemedButton>
       </View>
     </Container>
