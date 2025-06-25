@@ -13,14 +13,11 @@ export const createOrUpdateMember = async (data: AddMemberForm) => {
       }
     }
 
-    // Verifica se já existe um membro com o mesmo ID
     const index = members.findIndex((item) => item.id === data.id)
 
     if (index !== -1) {
-      // Atualiza o membro existente
       members[index] = data
     } else {
-      // Adiciona um novo membro
       members.push(data)
     }
 
