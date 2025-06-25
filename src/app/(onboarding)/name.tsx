@@ -1,10 +1,14 @@
 import React from "react"
 
-import { Text, View } from "react-native"
+import { View } from "react-native"
+
+import { router } from "expo-router"
 
 import { Container } from "@/components/onboarding/container"
+import { SingleLineInput } from "@/components/onboarding/inputs/single-line-input"
+import { Subtitle } from "@/components/onboarding/subtitle"
+import { Title } from "@/components/onboarding/title"
 import { ThemedButton } from "@/components/shared/button"
-import { router } from "expo-router"
 
 export default function Name() {
   const handleGoToEmail = () => {
@@ -13,9 +17,14 @@ export default function Name() {
 
   return (
     <Container>
-      <Text>name</Text>
+      <Title>Here our journey begins!</Title>
+
+      <Subtitle>We are Ginko, nice to meet you! What's your full name?</Subtitle>
+
+      <SingleLineInput placeholder="Type your name here..." />
+
       <View className="absolute bottom-0 w-full">
-        <ThemedButton onPress={handleGoToEmail}>
+        <ThemedButton className="absolute bottom-0 w-full" onPress={handleGoToEmail}>
           <ThemedButton.Text>CONTINUE</ThemedButton.Text>
         </ThemedButton>
       </View>
