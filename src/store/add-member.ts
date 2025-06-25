@@ -9,17 +9,17 @@ export interface AddMemberForm {
 }
 
 interface AddMemberFormState {
-  memberFrom: AddMemberForm
+  memberForm: AddMemberForm
   setMemberForm: (updates: Partial<AddMemberForm>) => void
 }
 
 export const useMemberStore = create<AddMemberFormState>((set) => ({
-  memberFrom: {
+  memberForm: {
     name: "",
     age: "",
     relation: "",
     gender: "",
     relationQuality: 0,
   },
-  setMemberForm: (updates) => set((state) => ({ memberFrom: { ...state.memberFrom, ...updates } })),
+  setMemberForm: (updates) => set((state) => ({ memberForm: { ...state.memberForm, ...updates } })),
 }))

@@ -1,27 +1,15 @@
 import { Header } from "@/components/add-member/header"
-import { Input } from "@/components/add-member/input"
-import { InputLabel } from "@/components/add-member/input-label"
 import React from "react"
 import { Text, View } from "react-native"
 
+import { Age } from "@/components/add-member/form/age"
+import { Gender } from "@/components/add-member/form/gender"
+import { Name } from "@/components/add-member/form/name"
+import { Rating } from "@/components/add-member/form/rating"
+import { Relation } from "@/components/add-member/form/relation"
 import { ThemedButton } from "@/components/shared/button"
-import { ThemedChip } from "@/components/shared/chip"
-import genders from "@/data/genders.json"
-import relations from "@/data/relations.json"
-import { useMemberStore } from "@/store/add-member"
-import StarRating from "react-native-star-rating-widget"
 
 export default function AddMember() {
-  const { memberFrom, setMemberForm } = useMemberStore()
-
-  const handleSelectRelation = (relation: string) => {
-    setMemberForm({ relation })
-  }
-
-  const handleSelectGender = (gender: string) => {
-    setMemberForm({ gender })
-  }
-
   return (
     <View className="flex-1 bg-blue-400">
       <Header />
@@ -31,43 +19,15 @@ export default function AddMember() {
           Please fill the information below regarding the child.
         </Text>
 
-        <InputLabel label="What's the child's name?" />
-        <Input />
+        <Name />
 
-        <InputLabel label="What's the child's age?" />
-        <Input keyboardType="number-pad" maxLength={2} />
+        <Age />
 
-        <InputLabel label="What's the relation?" />
-        <View className="flex-row flex-wrap gap-4 w-full">
-          {relations.map((relation) => (
-            <ThemedChip
-              key={relation.id}
-              label={relation.relation}
-              isActive={memberFrom.relation === relation.relation}
-              onPress={() => handleSelectRelation(relation.relation)}
-            />
-          ))}
-        </View>
+        <Relation />
 
-        <InputLabel label="What's the child's gender?" />
-        <View className="flex-row flex-wrap gap-4 w-full">
-          {genders.map((gender) => (
-            <ThemedChip
-              key={gender.id}
-              label={gender.gender}
-              isActive={memberFrom.gender === gender.gender}
-              onPress={() => handleSelectGender(gender.gender)}
-            />
-          ))}
-        </View>
+        <Gender />
 
-        <InputLabel label="What's the relationship quality between you and the child?" />
-
-        <StarRating
-          rating={memberFrom.relationQuality}
-          onChange={(e) => setMemberForm({ relationQuality: e })}
-          starSize={42}
-        />
+        <Rating />
       </View>
       <View className="absolute bottom-12 w-full px-5">
         <ThemedButton>
