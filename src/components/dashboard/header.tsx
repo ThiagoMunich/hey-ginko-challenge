@@ -7,11 +7,10 @@ interface HeaderProps extends ViewProps {
 }
 export function Header({ name }: HeaderProps) {
   return (
-    <View className="flex-1 mt-5 gap-y-3">
+    <View className="mt-5 gap-y-3">
       <Text className="font-black text-4xl text-white">Welcome, {name}!</Text>
-      <Subtitle>
-        Here is your main dashboard, where you can add, update, or remove data from your family members.
-      </Subtitle>
+      <Subtitle>• Tap the card to update any information.</Subtitle>
+      <Subtitle>• Tap and hold the card to delete.</Subtitle>
     </View>
   )
 }

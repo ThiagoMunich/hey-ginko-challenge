@@ -14,7 +14,7 @@ export function Gender() {
   return (
     <>
       <InputLabel label="What's the child's gender?" />
-      <View className="flex-row flex-wrap gap-4 w-full mb-5">
+      <View className="flex-row flex-wrap gap-4 w-full mb-8">
         {genders.map((gender) => (
           <ThemedChip
             key={gender.id}

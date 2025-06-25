@@ -24,10 +24,8 @@ export default function Dashboard() {
   useFocusEffect(
     useCallback(() => {
       fetchMembers()
-    }, [])
+    }, [members])
   )
-
-  console.log(members)
 
   const fetchOnboardingData = async () => {
     const data = await getOnboardingData()

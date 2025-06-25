@@ -12,21 +12,21 @@ export function Member({ data, ...rest }: Props) {
     <TouchableOpacity
       {...rest}
       activeOpacity={0.7}
-      className="w-full border-blue-950 border-2 rounded-xl bg-blue-100 min-h-40 p-5"
+      className="w-full border-blue-950 border-4 rounded-xl bg-blue-100 min-h-40 p-5"
     >
       <View className="flex-row items-center justify-between mb-5">
         <Text className="font-black text-2xl text-center">{data?.name?.toUpperCase()}</Text>
-        <Text className="font-black text-2xl text-center">{data?.age}</Text>
+        <Text className="font-black text-4xl text-center">{data?.age}</Text>
       </View>
 
       <View className="flex-row items-center justify-between mb-5">
-        <Text className="font-semibold text-blue-950">Age: {data?.relation}</Text>
         <Text className="font-semibold text-blue-950">Gender: {data?.gender}</Text>
+        <Text className="font-semibold text-blue-950">Relation: {data?.relation}</Text>
       </View>
 
       <View className="mt-auto justify-center items-center">
         <StarRating
-          starSize={24}
+          starSize={28}
           color="#172554"
           onChange={() => {}}
           enableSwiping={false}

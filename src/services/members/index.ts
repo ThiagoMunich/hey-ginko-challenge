@@ -32,6 +32,24 @@ export const getMembers = async (): Promise<AddMemberForm[]> => {
   }
 }
 
+export const deleteMemberById = async (id: string) => {
+  const membersString = await AsyncStorage.getItem("members")
+  if (!membersString) return
+
+  let members: AddMemberForm[] = []
+  try {
+    members = JSON.parse(membersString)
+    if (!Array.isArray(members)) {
+      members = []
+    }
+  } catch {
+    members = []
+  }
+
+  const updatedMembers = members.filter((member) => member.id !== id)
+  await AsyncStorage.setItem("members", JSON.stringify(updatedMembers))
+}
+
 export const clearAllMembers = async () => {
   await AsyncStorage.multiRemove(["members"])
 }

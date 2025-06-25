@@ -1,5 +1,6 @@
 import React, { memo } from "react"
 
+import { deleteMemberById } from "@/services/members"
 import { AddMemberForm } from "@/store/add-member"
 import { FlatList } from "react-native"
 import { Member } from "../member"
@@ -13,9 +14,9 @@ export const Members = memo(({ data }: Props) => {
     <FlatList
       data={data}
       keyExtractor={(item) => item.id}
-      contentContainerStyle={{ gap: 16 }}
       showsVerticalScrollIndicator={false}
-      renderItem={({ item }) => <Member data={item} />}
+      renderItem={({ item }) => <Member data={item} onPress={async () => await deleteMemberById(item.id)} />}
+      contentContainerStyle={{ gap: 16, paddingTop: 12, paddingBottom: 12 }}
     />
   )
 })
