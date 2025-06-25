@@ -1,12 +1,12 @@
 import { create } from "zustand"
 
-interface OnboardingForm {
+export interface OnboardingForm {
   name: string
   email: string
   phone: string
   role: string
-  goals: string[]
-  values: string[]
+  goals: string
+  values: string
 }
 
 interface OnboardingState {
@@ -20,8 +20,8 @@ export const useOnboardingStore = create<OnboardingState>((set) => ({
     email: "",
     phone: "",
     role: "",
-    goals: [],
-    values: [],
+    goals: "",
+    values: "",
   },
   setForm: (updates) => set((state) => ({ form: { ...state.form, ...updates } })),
 }))

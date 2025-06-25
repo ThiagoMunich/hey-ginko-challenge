@@ -7,10 +7,21 @@ import { SingleLineInput } from "@/components/onboarding/inputs/single-line-inpu
 import { Subtitle } from "@/components/onboarding/subtitle"
 import { Title } from "@/components/onboarding/title"
 import { ThemedButton } from "@/components/shared/button"
+import { useToast } from "@/hooks/useToast"
+import { useOnboardingStore } from "@/store/onboarding"
 import { router } from "expo-router"
 
 export default function Phone() {
+  const { showToast } = useToast()
+
+  const { form, setForm } = useOnboardingStore()
+
   const handleGoToRoles = () => {
+    if (!form.phone) {
+      showToast("Your phone is mandatory.")
+      return
+    }
+
     router.push("/(onboarding)/role")
   }
 
@@ -20,7 +31,12 @@ export default function Phone() {
 
       <Subtitle>How about important updates and notifications?</Subtitle>
 
-      <SingleLineInput placeholder="Type your phone here..." keyboardType="number-pad" />
+      <SingleLineInput
+        value={form.phone}
+        keyboardType="number-pad"
+        placeholder="Type your phone here..."
+        onChangeText={(phone) => setForm({ phone })}
+      />
 
       <View className="absolute bottom-0 w-full">
         <ThemedButton onPress={handleGoToRoles}>

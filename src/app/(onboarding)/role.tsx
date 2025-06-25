@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 
 import { View } from "react-native"
 
@@ -8,17 +8,26 @@ import { Title } from "@/components/onboarding/title"
 import { ThemedButton } from "@/components/shared/button"
 import { ThemedChip } from "@/components/shared/chip"
 import roles from "@/data/roles.json"
+import { useToast } from "@/hooks/useToast"
+import { useOnboardingStore } from "@/store/onboarding"
 import { router } from "expo-router"
 
 export default function Role() {
-  const [selectedRole, setSelectedRole] = useState("")
+  const { showToast } = useToast()
+
+  const { form, setForm } = useOnboardingStore()
 
   const handleGoToGoals = () => {
+    if (!form.role) {
+      showToast("Your role is mandatory.")
+      return
+    }
+
     router.push("/(onboarding)/goals")
   }
 
   const handleSelectRole = (role: string) => {
-    setSelectedRole(role)
+    setForm({ role })
   }
 
   return (
@@ -32,7 +41,7 @@ export default function Role() {
           <ThemedChip
             key={role.id}
             label={role.role}
-            isActive={selectedRole === role.role}
+            isActive={form.role === role.role}
             onPress={() => handleSelectRole(role.role)}
           />
         ))}
