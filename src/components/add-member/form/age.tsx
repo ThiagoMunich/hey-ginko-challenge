@@ -10,7 +10,7 @@ export function Age() {
   return (
     <View className="mb-5">
       <InputLabel label="What's the child's age?" />
-      <Input value={memberForm.age} onChangeText={(age) => setMemberForm({ age })} />
+      <Input value={memberForm.age} onChangeText={(age) => setMemberForm({ age })} maxLength={2} />
     </View>
   )
 }

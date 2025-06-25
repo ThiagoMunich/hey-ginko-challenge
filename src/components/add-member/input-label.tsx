@@ -7,7 +7,7 @@ interface Props extends TextProps {
 
 export function InputLabel({ label, ...rest }: Props) {
   return (
-    <Text {...rest} className="text-white font-medium text-base mb-1">
+    <Text {...rest} className="text-white font-semibold text-base mb-1">
       {label}
     </Text>
   )
