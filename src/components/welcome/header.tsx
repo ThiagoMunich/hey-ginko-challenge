@@ -1,16 +1,17 @@
 import { View } from "react-native"
-import Animated, { ZoomIn } from "react-native-reanimated"
+import Animated, { FadeInUp, ZoomIn } from "react-native-reanimated"
 
 export function Header() {
   return (
-    <View className="flex-1">
-      <Animated.Image entering={ZoomIn.springify()} source={require("@/assets/images/ginko-logo.png")} />
+    <View>
+      <Animated.Image
+        className="scale-125 self-center mb-10"
+        entering={ZoomIn.springify().duration(1000)}
+        source={require("@/assets/images/ginko-logo.png")}
+      />
 
-      <Animated.Text className="font-black text-xl mt-5">SCREEN FREEDOM STARTS HERE</Animated.Text>
-
-      <Animated.Text className="text-base mt-2 font-medium">
-        Ginko is the first doctor-backed digital parenting copilot app that kids actually like. From first tablet to
-        first social account, we offer expert support at every stage—like training wheels for the internet.
+      <Animated.Text entering={FadeInUp.delay(600).duration(800)} className="font-black text-4xl text-blue-950">
+        SCREEN FREEDOM STARTS HERE
       </Animated.Text>
     </View>
   )
