@@ -22,10 +22,7 @@ export const createOrUpdateMember = async (data: AddMemberForm) => {
     }
 
     await AsyncStorage.setItem("members", JSON.stringify(members))
-    console.log("Membro salvo/atualizado com sucesso:", data)
-  } catch (error) {
-    console.error("Erro ao salvar ou atualizar membro:", error)
-  }
+  } catch (error) {}
 }
 
 export const getMembers = async (): Promise<AddMemberForm[]> => {
