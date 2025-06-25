@@ -13,7 +13,7 @@ export const Members = memo(({ data }: Props) => {
     <FlatList
       data={data}
       keyExtractor={(item) => item.id}
-      contentContainerStyle={{ gap: 12 }}
+      contentContainerStyle={{ gap: 16 }}
       showsVerticalScrollIndicator={false}
       renderItem={({ item }) => <Member data={item} />}
     />
