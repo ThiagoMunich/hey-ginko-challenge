@@ -2,11 +2,11 @@ import React from "react"
 
 import { View } from "react-native"
 
-import { Container } from "@/components/onboarding/container"
 import { MultiLIneInput } from "@/components/onboarding/inputs/multi-line-input"
 import { Subtitle } from "@/components/onboarding/subtitle"
 import { Title } from "@/components/onboarding/title"
 import { ThemedButton } from "@/components/shared/button"
+import { Container } from "@/components/shared/container"
 import { router } from "expo-router"
 
 export default function Goals() {

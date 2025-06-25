@@ -2,11 +2,11 @@ import React from "react"
 
 import { View } from "react-native"
 
-import { Container } from "@/components/onboarding/container"
 import { Subtitle } from "@/components/onboarding/subtitle"
 import { Title } from "@/components/onboarding/title"
 import { ThemedButton } from "@/components/shared/button"
 import { ThemedChip } from "@/components/shared/chip"
+import { Container } from "@/components/shared/container"
 import roles from "@/data/roles.json"
 import { useToast } from "@/hooks/useToast"
 import { useOnboardingStore } from "@/store/onboarding"
