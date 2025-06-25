@@ -24,7 +24,7 @@ export default function AddMember() {
     }, [])
   )
 
-  const handleAddChild = async () => {
+  const handleAddOrEditChild = async () => {
     await createOrUpdateMember(memberForm)
 
     resetMemberForm()
@@ -50,7 +50,7 @@ export default function AddMember() {
         <Rating />
       </View>
       <View className="absolute bottom-12 w-full px-5">
-        <ThemedButton onPress={handleAddChild}>
+        <ThemedButton onPress={handleAddOrEditChild}>
           <ThemedButton.Text>CONFIRM</ThemedButton.Text>
         </ThemedButton>
       </View>
