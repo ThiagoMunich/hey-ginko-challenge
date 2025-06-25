@@ -24,8 +24,10 @@ export default function Name() {
       <SingleLineInput placeholder="Type your name here..." />
 
       <View className="absolute bottom-0 w-full">
-        <ThemedButton className="absolute bottom-0 w-full" onPress={handleGoToEmail}>
+        <ThemedButton onPress={handleGoToEmail}>
           <ThemedButton.Text>CONTINUE</ThemedButton.Text>
+
+          <ThemedButton.Badge>1 of 6</ThemedButton.Badge>
         </ThemedButton>
       </View>
     </Container>
