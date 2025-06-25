@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "role": "Mom"
+  },
+  {
+    "id": 2,
+    "role": "Dad"
+  },
+  {
+    "id": 3,
+    "role": "Guardian"
+  },
+  {
+    "id": 4,
+    "role": "Grandfather"
+  },
+  {
+    "id": 5,
+    "role": "Grandmother"
+  },
+  {
+    "id": 6,
+    "role": "Step-dad"
+  },
+  {
+    "id": 7,
+    "role": "Step-mom"
+  }
+]
