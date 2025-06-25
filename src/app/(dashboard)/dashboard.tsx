@@ -6,13 +6,15 @@ import { ThemedButton } from "@/components/shared/button"
 import { Container } from "@/components/shared/container"
 import { getMembers } from "@/services/members"
 import { getOnboardingData } from "@/services/onboarding"
-import { AddMemberForm } from "@/store/add-member"
+import { AddMemberForm, useMemberStore } from "@/store/add-member"
 import { OnboardingForm } from "@/store/onboarding"
 import { router, useFocusEffect } from "expo-router"
 import React, { useCallback, useEffect, useState } from "react"
 import { View } from "react-native"
 
 export default function Dashboard() {
+  const { resetMemberForm } = useMemberStore()
+
   const [onboardingData, setOnboardingData] = useState<OnboardingForm>({} as OnboardingForm)
 
   const [members, setMembers] = useState<AddMemberForm[]>([] as AddMemberForm[])
@@ -40,6 +42,8 @@ export default function Dashboard() {
   }
 
   const handleAddMember = () => {
+    resetMemberForm()
+
     router.push("/(dashboard)/add-member")
   }
 

@@ -8,7 +8,7 @@ import { Name } from "@/components/add-member/form/name"
 import { Rating } from "@/components/add-member/form/rating"
 import { Relation } from "@/components/add-member/form/relation"
 import { ThemedButton } from "@/components/shared/button"
-import { saveMember } from "@/services/members"
+import { createOrUpdateMember } from "@/services/members"
 import { useMemberStore } from "@/store/add-member"
 import { router, useFocusEffect } from "expo-router"
 import uuid from "react-native-uuid"
@@ -18,12 +18,14 @@ export default function AddMember() {
 
   useFocusEffect(
     useCallback(() => {
-      setMemberForm({ id: uuid.v4() })
+      if (!memberForm?.id) {
+        setMemberForm({ id: uuid.v4() })
+      }
     }, [])
   )
 
-  const handleAddMember = async () => {
-    await saveMember(memberForm)
+  const handleAddChild = async () => {
+    await createOrUpdateMember(memberForm)
 
     resetMemberForm()
 
@@ -48,8 +50,8 @@ export default function AddMember() {
         <Rating />
       </View>
       <View className="absolute bottom-12 w-full px-5">
-        <ThemedButton onPress={handleAddMember}>
-          <ThemedButton.Text>ADD CHILD</ThemedButton.Text>
+        <ThemedButton onPress={handleAddChild}>
+          <ThemedButton.Text>CONFIRM</ThemedButton.Text>
         </ThemedButton>
       </View>
     </View>

@@ -1,24 +1,34 @@
 import { AddMemberForm } from "@/store/add-member"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
-export const saveMember = async (data: AddMemberForm) => {
-  const membersString = await AsyncStorage.getItem("members")
-  let members: AddMemberForm[] = []
+export const createOrUpdateMember = async (data: AddMemberForm) => {
+  try {
+    const membersString = await AsyncStorage.getItem("members")
+    let members: AddMemberForm[] = []
 
-  if (membersString) {
-    try {
+    if (membersString) {
       members = JSON.parse(membersString)
       if (!Array.isArray(members)) {
         members = []
       }
-    } catch (e) {
-      members = []
     }
+
+    // Verifica se já existe um membro com o mesmo ID
+    const index = members.findIndex((item) => item.id === data.id)
+
+    if (index !== -1) {
+      // Atualiza o membro existente
+      members[index] = data
+    } else {
+      // Adiciona um novo membro
+      members.push(data)
+    }
+
+    await AsyncStorage.setItem("members", JSON.stringify(members))
+    console.log("Membro salvo/atualizado com sucesso:", data)
+  } catch (error) {
+    console.error("Erro ao salvar ou atualizar membro:", error)
   }
-
-  members.push(data)
-
-  await AsyncStorage.setItem("members", JSON.stringify(members))
 }
 
 export const getMembers = async (): Promise<AddMemberForm[]> => {
