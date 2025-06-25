@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "gender": "Boy"
+    },
+    {
+      "id": 2,
+      "gender": "Girl"
+    },
+    {
+      "id": 3,
+      "gender": "Non-binary"
+    },
+    {
+      "id": 4,
+      "gender": "Other"
+    }
+
+  ]
+  

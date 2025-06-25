@@ -15,7 +15,7 @@ export function Header() {
           <Text className="text-3xl">🔙</Text>
         </TouchableOpacity>
       )}
-      <Text className="text-white font-thin text-4xl text-center mr-auto ml-auto">ADD MEMBER</Text>
+      <Text className="text-white font-thin text-4xl text-center mr-auto ml-auto">NEW MEMBER</Text>
     </View>
   )
 }

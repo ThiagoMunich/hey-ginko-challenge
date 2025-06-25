@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "relation": "Child"
+    },
+    {
+      "id": 2,
+      "relation": "Step-child"
+    },
+    {
+      "id": 3,
+      "relation": "Grandchild"
+    },
+    {
+      "id": 4,
+      "relation": "Other"
+    }
+
+  ]
+  
