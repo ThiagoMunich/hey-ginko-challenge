@@ -48,10 +48,15 @@ export default function Email() {
       />
 
       <View className="absolute bottom-0 w-full">
-        <ThemedButton className="absolute bottom-0 w-full" onPress={handleGoToPhone}>
-          <ThemedButton.Text>NEXT</ThemedButton.Text>
-          <ThemedButton.Badge>2 of 6</ThemedButton.Badge>
-        </ThemedButton>
+        <View className="flex-1 flex-row gap-x-4">
+          <ThemedButton onPress={() => router.back()}>
+            <ThemedButton.Text>BACK</ThemedButton.Text>
+          </ThemedButton>
+          <ThemedButton style={{ flexGrow: 1 }} className="absolute bottom-0 w-full" onPress={handleGoToPhone}>
+            <ThemedButton.Text>NEXT</ThemedButton.Text>
+            <ThemedButton.Badge>2 of 6</ThemedButton.Badge>
+          </ThemedButton>
+        </View>
       </View>
     </Container>
   )

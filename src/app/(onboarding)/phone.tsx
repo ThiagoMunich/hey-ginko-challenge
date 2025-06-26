@@ -51,10 +51,15 @@ export default function Phone() {
       />
 
       <View className="absolute bottom-0 w-full">
-        <ThemedButton onPress={handleGoToRoles}>
-          <ThemedButton.Text>NEXT</ThemedButton.Text>
-          <ThemedButton.Badge>3 of 6</ThemedButton.Badge>
-        </ThemedButton>
+        <View className="flex-1 flex-row gap-x-4">
+          <ThemedButton onPress={() => router.back()}>
+            <ThemedButton.Text>BACK</ThemedButton.Text>
+          </ThemedButton>
+          <ThemedButton style={{ flexGrow: 1 }} onPress={handleGoToRoles}>
+            <ThemedButton.Text>NEXT</ThemedButton.Text>
+            <ThemedButton.Badge>3 of 6</ThemedButton.Badge>
+          </ThemedButton>
+        </View>
       </View>
     </Container>
   )

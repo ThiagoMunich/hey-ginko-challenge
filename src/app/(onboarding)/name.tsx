@@ -38,7 +38,7 @@ export default function Name() {
       />
 
       <View className="absolute bottom-0 w-full">
-        <ThemedButton onPress={handleGoToEmail}>
+        <ThemedButton style={{ flexGrow: 1 }} onPress={handleGoToEmail}>
           <ThemedButton.Text>NEXT</ThemedButton.Text>
 
           <ThemedButton.Badge>1 of 6</ThemedButton.Badge>

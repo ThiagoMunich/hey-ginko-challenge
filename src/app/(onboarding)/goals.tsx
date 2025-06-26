@@ -38,11 +38,16 @@ export default function Goals() {
       />
 
       <View className="absolute bottom-0 w-full">
-        <ThemedButton onPress={handleGoToValues}>
-          <ThemedButton.Text>NEXT</ThemedButton.Text>
+        <View className="flex-1 flex-row gap-x-4">
+          <ThemedButton onPress={() => router.back()}>
+            <ThemedButton.Text>BACK</ThemedButton.Text>
+          </ThemedButton>
+          <ThemedButton style={{ flexGrow: 1 }} onPress={handleGoToValues}>
+            <ThemedButton.Text>NEXT</ThemedButton.Text>
 
-          <ThemedButton.Badge>5 of 6</ThemedButton.Badge>
-        </ThemedButton>
+            <ThemedButton.Badge>5 of 6</ThemedButton.Badge>
+          </ThemedButton>
+        </View>
       </View>
     </Container>
   )

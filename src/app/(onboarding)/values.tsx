@@ -41,9 +41,14 @@ export default function Values() {
       />
 
       <View className="absolute bottom-0 w-full">
-        <ThemedButton onPress={handleFinishOnboarding}>
-          <ThemedButton.Text>FINISH & SIGN UP</ThemedButton.Text>
-        </ThemedButton>
+        <View className="flex-1 flex-row gap-x-4">
+          <ThemedButton onPress={() => router.back()}>
+            <ThemedButton.Text>BACK</ThemedButton.Text>
+          </ThemedButton>
+          <ThemedButton style={{ flexGrow: 1 }} onPress={handleFinishOnboarding}>
+            <ThemedButton.Text>FINISH & SIGN UP</ThemedButton.Text>
+          </ThemedButton>
+        </View>
       </View>
     </Container>
   )
