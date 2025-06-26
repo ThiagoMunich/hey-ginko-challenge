@@ -7,6 +7,7 @@ Welcome to the **Ginko**, a mobile application built using **React Native** and 
 - **React Native** with Expo
 - **TypeScript**
 - **Zustand** for global state management
+- **Zod** for schema validation
 - **NativeWind** for UI
 - **Reanimated** for animations
 - **AsyncStorage** for persistent data
@@ -37,6 +38,7 @@ Welcome to the **Ginko**, a mobile application built using **React Native** and 
 - Customized app name, icon and splash screen
 - Added modern rating system with swipe to rate
 - Added treatment in case of no family member yet added
+- Added treatment to fill all child information before adding to list
 - Followed Git best practices with small, concise and clear commit messages
 
 ---
