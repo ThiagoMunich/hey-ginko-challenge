@@ -8,6 +8,7 @@ export const useToast = () => {
       position: "bottom",
       visibilityTime: 2000,
       autoHide: true,
+      useModal: true,
     })
   }
 

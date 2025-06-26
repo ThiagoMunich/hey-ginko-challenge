@@ -1,6 +1,6 @@
 import { Header } from "@/components/add-member/header"
-import React, { useCallback } from "react"
-import { Text, View } from "react-native"
+import React, { useCallback, useMemo } from "react"
+import { Alert, Text, View } from "react-native"
 
 import { Age } from "@/components/add-member/form/age"
 import { Gender } from "@/components/add-member/form/gender"
@@ -24,13 +24,24 @@ export default function AddMember() {
     }, [])
   )
 
+  const hasInputsWithoutFill = useMemo(() => {
+    return Object.values(memberForm).some((item) => item === "")
+  }, [memberForm])
+
   const handleAddOrEditChild = async () => {
+    if (hasInputsWithoutFill) {
+      Alert.alert("MISSING INFORMATION \n", "Please fill all the fields.")
+      return
+    }
+
     await createOrUpdateMember(memberForm)
 
     resetMemberForm()
 
     router.back()
   }
+
+  console.log(hasInputsWithoutFill)
 
   return (
     <View className="flex-1 bg-blue-400">
