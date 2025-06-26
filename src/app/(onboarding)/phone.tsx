@@ -52,7 +52,7 @@ export default function Phone() {
 
       <View className="absolute bottom-0 w-full">
         <ThemedButton onPress={handleGoToRoles}>
-          <ThemedButton.Text>CONTINUE</ThemedButton.Text>
+          <ThemedButton.Text>NEXT</ThemedButton.Text>
           <ThemedButton.Badge>3 of 6</ThemedButton.Badge>
         </ThemedButton>
       </View>

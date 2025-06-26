@@ -39,7 +39,7 @@ export default function Name() {
 
       <View className="absolute bottom-0 w-full">
         <ThemedButton onPress={handleGoToEmail}>
-          <ThemedButton.Text>CONTINUE</ThemedButton.Text>
+          <ThemedButton.Text>NEXT</ThemedButton.Text>
 
           <ThemedButton.Badge>1 of 6</ThemedButton.Badge>
         </ThemedButton>

@@ -39,7 +39,7 @@ export default function Goals() {
 
       <View className="absolute bottom-0 w-full">
         <ThemedButton onPress={handleGoToValues}>
-          <ThemedButton.Text>CONTINUE</ThemedButton.Text>
+          <ThemedButton.Text>NEXT</ThemedButton.Text>
 
           <ThemedButton.Badge>5 of 6</ThemedButton.Badge>
         </ThemedButton>

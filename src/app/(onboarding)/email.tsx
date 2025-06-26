@@ -49,7 +49,7 @@ export default function Email() {
 
       <View className="absolute bottom-0 w-full">
         <ThemedButton className="absolute bottom-0 w-full" onPress={handleGoToPhone}>
-          <ThemedButton.Text>CONTINUE</ThemedButton.Text>
+          <ThemedButton.Text>NEXT</ThemedButton.Text>
           <ThemedButton.Badge>2 of 6</ThemedButton.Badge>
         </ThemedButton>
       </View>
