@@ -41,8 +41,6 @@ export default function AddMember() {
     router.back()
   }
 
-  console.log(hasInputsWithoutFill)
-
   return (
     <View className="flex-1 bg-blue-400">
       <Header />
