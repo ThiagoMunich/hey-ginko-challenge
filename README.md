@@ -34,6 +34,7 @@ Welcome to the **Ginko**, a mobile application built using **React Native** and 
 
 ## ✨ Extra improvements
 
+- Added counter on the onboarding screens to help users know the progress
 - Added toast to improve UX on the form with mandatory inputs
 - Customized app name, icon and splash screen
 - Added modern rating system with swipe to rate
