@@ -2,6 +2,8 @@
 
 Welcome to the **Ginko**, a mobile application built using **React Native** and **Expo**. This project guides a parent through setting up their account and creating entries for their immediate family. Under the hood, it features clean architecture, reusable components, and global state management with stores and local persistence.
 
+https://github.com/user-attachments/assets/e8275588-e1ad-42c6-85f9-ce5ffe5e020a
+
 ## 🚀 Tech Stack
 
 - **React Native** with Expo
