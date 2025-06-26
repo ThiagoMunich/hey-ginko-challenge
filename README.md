@@ -46,8 +46,8 @@ Welcome to the **Ginko**, a mobile application built using **React Native** and 
 1. Clone the Repository
 
    ```bash
-   git clone https://github.com/thiagomunich/modak-challenge.git
-   cd modak-challenge
+   git clone https://github.com/ThiagoMunich/hey-ginko-challenge.git
+   cd hey-ginko-challenge
    ```
 
 2. Install dependencies
