@@ -10,6 +10,9 @@ import { Container } from "@/components/shared/container"
 import { useToast } from "@/hooks/useToast"
 import { useOnboardingStore } from "@/store/onboarding"
 import { router } from "expo-router"
+import { z } from "zod"
+
+const emailSchema = z.string().email("Enter a valid email address.")
 
 export default function Email() {
   const { showToast } = useToast()
@@ -19,6 +22,13 @@ export default function Email() {
   const handleGoToPhone = () => {
     if (!form.email) {
       showToast("Your email is mandatory.")
+      return
+    }
+
+    const result = emailSchema.safeParse(form.email)
+
+    if (!result.success) {
+      showToast(result.error.errors[0].message)
       return
     }
 

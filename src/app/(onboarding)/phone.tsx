@@ -9,7 +9,11 @@ import { ThemedButton } from "@/components/shared/button"
 import { Container } from "@/components/shared/container"
 import { useToast } from "@/hooks/useToast"
 import { useOnboardingStore } from "@/store/onboarding"
+
 import { router } from "expo-router"
+import { z } from "zod"
+
+const phoneSchema = z.string().min(10, "Phone number is too short")
 
 export default function Phone() {
   const { showToast } = useToast()
@@ -19,6 +23,13 @@ export default function Phone() {
   const handleGoToRoles = () => {
     if (!form.phone) {
       showToast("Your phone is mandatory.")
+      return
+    }
+
+    const result = phoneSchema.safeParse(form.phone)
+
+    if (!result.success) {
+      showToast(result.error.errors[0].message)
       return
     }
 
@@ -32,6 +43,7 @@ export default function Phone() {
       <Subtitle>How about important updates and notifications?</Subtitle>
 
       <SingleLineInput
+        maxLength={10}
         value={form.phone}
         keyboardType="number-pad"
         placeholder="Type your phone here..."
